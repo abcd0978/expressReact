@@ -2,6 +2,10 @@ import axios from "axios";
 import {LOGIN_USER} from './types'
 import { REGISTER_USER } from "./types";
 import {AUTH_USER} from "./types"
+import api from '../api/index'
+
+
+
 export function loginUser(dataSubmit){
     const request = axios.post('/api/users/login',dataSubmit)
         .then(res=>res.data)
@@ -11,10 +15,8 @@ export function loginUser(dataSubmit){
         payload:request
     }
 }
-export function registerUser(dataSubmit){
-    const request = axios.post('/api/users/register',dataSubmit)
-        .then(res=>res.data)
-    
+export async function registerUser(dataSubmit){
+    const request = await api.post('/users/register',dataSubmit)
     return {
         type:REGISTER_USER,
         payload:request

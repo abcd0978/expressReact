@@ -18,10 +18,8 @@ export default function Auth(SpecificComponent,option,adminRoute=null){
                 if(option){//option이 true이면,
                     navigate('/login');
                 }
-            }else{//로그인은 했으나 어드민이 아님.
+            }else{//어드민루트라면
                 if(adminRoute && !res.payload.isAdmin){
-                    navigate('/');
-                }else{
                     navigate('/');
                 }
             }

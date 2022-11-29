@@ -1,0 +1,18 @@
+.editor{
+    min-height: 500px;
+}
+.PostPage{
+    width: 75%;
+    min-width:500px;
+    margin: 3rem auto;
+}
+.ck.ck-editor__editable{
+    min-height: 400px;
+}
+.postButton{
+    margin-top: 30px;
+    float: right;
+}
+.titleInput{
+    margin-bottom: 10px;
+}

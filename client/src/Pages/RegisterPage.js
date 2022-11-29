@@ -3,7 +3,7 @@ import moment from 'moment'
 import { Formik } from 'formik';
 import * as Yup from 'yup'
 import {useDispatch} from 'react-redux'
-import { registerUser } from '../../../_actions/user_action';
+import { registerUser } from '../_actions/user_action';
 import {Form,Input,Button} from 'antd';
 
 const formItemLayout = {
@@ -68,10 +68,12 @@ function RegisterPage(props) {
               };
     
               dispatch(registerUser(dataToSubmit)).then(response => {
-                if (response.payload.success) {
-                  props.history.push("/login");
+                const result = response.payload.data
+                if (result.success) {
+                  alert("회원가입을 축하합니다.")
+                  window.location.replace('/')
                 } else {
-                  alert(response.payload.err.errmsg)
+                  alert(result.err)
                 }
               })
     

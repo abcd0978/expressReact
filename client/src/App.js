@@ -5,12 +5,13 @@ import {
 } from "react-router-dom";
 
 
-import LandingPage from "./components/views/LandingPage/LandingPage";
+import LandingPage from "./Pages/LandingPage";
 import Footer from "./components/views/Footer/Footer";
-import LoginPage from "./components/views/LoginPage/LoginPage";
+import LoginPage from "./Pages/LoginPage";
 import NavBar from "./components/views/NavBar/NavBar";
-import RegisterPage from "./components/views/RegisterPage/RegisterPage";
-import VideoUploadPage from "./components/views/VideoUploadPage/VideoUploadPage";
+import RegisterPage from "./Pages/RegisterPage";
+import PostingPage from "./Pages/PostingPage";
+import PostPage from "./Pages/PostPage/PostPage";
 import Auth from "./hoc/auth";
 import { Suspense } from "react";
 import Spinner from "./components/views/Spinner/Spinner";
@@ -27,7 +28,8 @@ function App() {
         <Route exact path="/" element={ Auth(LandingPage, null)  }/>
         <Route exact path="/login" element={ Auth(LoginPage, false)}/>
         <Route exact path="/register" element={ Auth( RegisterPage, false)}/>
-        <Route exact path="/video/upload" element={ Auth(VideoUploadPage,true)}/>
+        <Route exact path="/postings" element={ Auth( PostingPage, null)}/>
+        <Route exact path="/post" element={ Auth( PostPage, true)}/>
 
         </Routes>
       </div>
